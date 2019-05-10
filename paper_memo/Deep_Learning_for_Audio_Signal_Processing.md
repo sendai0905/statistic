@@ -5,7 +5,7 @@ arXivTimes Indicator のスコアが他の音声認識タグが付けられた�
 
 ## arXiv
 
-[https://arxiv.org/abs/1905.00078](リンク)
+[リンク](https://arxiv.org/abs/1905.00078)
 
 ## 略称
 
