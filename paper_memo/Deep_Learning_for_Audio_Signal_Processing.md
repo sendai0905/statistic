@@ -7,12 +7,13 @@ arXivTimes Indicator のスコアが他の音声認識タグが付けられた�
 
 [リンク](https://arxiv.org/abs/1905.00078)
 
-## 略称
+## 凡例
 
-DL: Deep Learning
-NN: Neural Network
-CNN: Convolutional Neural Network(畳み込みニューラルネットワーク)
-LSTM: Long Short-Term Memory(RNN の一種)
+DL: Deep Learning  
+NN: Neural Network  
+CNN: Convolutional Neural Network(畳み込みニューラルネットワーク)  
+LSTM: Long Short-Term Memory(RNN の一種)  
+_いまいちわからんところは italic で_
 
 ## Abstract
 
@@ -34,10 +35,10 @@ LSTM: Long Short-Term Memory(RNN の一種)
 
 ## 2 章 手法
 
-### A:概要
+### A: 概要
 
 このタスクは時系列データの入力から予測する目標変数に応じて大きく 2 つに分けられる。  
-ひとつは**単一のグローバルラベル**、**ある時間ごとのラベル**、または**自由長のラベルシーケンス**で、もうひとつは**ひとつのクラス**や**一連のクラス**、または**数値**である。
+ひとつは**単一のグローバルラベル**、**ある時間ごとのラベル**、または**自由長のラベルシーケンス**で、もうひとつは**ひとつのクラス**や**一連のクラス**、または**数値**である。  
 (何言ってるか現時点ではさっぱりわからんけど、とりあえず研究は前者の単一のグローバルラベルに分類されると思う。多分)
 
 - 単一のグローバルラベル
@@ -45,12 +46,12 @@ LSTM: Long Short-Term Memory(RNN の一種)
   - sequence classfication  
     言語特定（？）、話者推定、音楽のキー推定、音響シーン推定などの**事前にどの程度の種類があるのかわかっている状態から 1 つのものに特定する**もの  
     (言語も話者もキーも音響シーンも未知のものを推定するものではない)  
-    [http://xiangze.hatenablog.com/entry/2013/12/04/010241](参考？)ちょっと昔のだけど
+    [参考？](http://xiangze.hatenablog.com/entry/2013/12/04/010241)ちょっと昔のだけど
 
   - multi-label sequence classification  
     **分類されうるすべてのクラスから一部を取り出したもの**？いまいちわからん  
-    [https://research.google.com/audioset/](AudioSet)や音程などの*音響的なイベント*が目標変数の例らしい  
-    [https://qiita.com/koshian2/items/ab5e0c68a257585d7c6f](参考？)これの時系列版ということだろうか？いまいち課題設定のイメージが掴めない
+    [AudioSet](https://research.google.com/audioset/)や音程などの*音響的なイベント*が目標変数の例らしい  
+    [参考？](https://qiita.com/koshian2/items/ab5e0c68a257585d7c6f)これの時系列版ということだろうか？いまいち課題設定のイメージが掴めない
 
   - sequence regression  
     目標変数は**連続的な数値**  
@@ -61,10 +62,10 @@ LSTM: Long Short-Term Memory(RNN の一種)
 - ある時間ごとのラベル  
   明日はここから
 
-### B:特徴量
+### B: 特徴量
 
-### C:モデル
+### C: モデル
 
-### D:データ
+### D: データ
 
-### E:評価
+### E: 評価
