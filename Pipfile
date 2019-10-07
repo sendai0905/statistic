@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
+autopep8 = "*"
 
 [packages]
 numpy = "*"
@@ -15,6 +16,7 @@ keras = "*"
 tensorflow = "*"
 wave = "*"
 pysoundfile = "*"
+mutagen = "*"
 
 [requires]
 python_version = "3.7"
