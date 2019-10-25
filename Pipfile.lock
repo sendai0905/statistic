@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e0ee0c25071b1d73170db4e087d49057fb30691bea648868de8be8257f30cc76"
+            "sha256": "39a862be9b931a9229a254754cc65ac79cff15d9df3e2f1fc10aeb5931aa4c66"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -174,11 +174,11 @@
         },
         "keras": {
             "hashes": [
-                "sha256:a0d6ecf1d71cd0b85ea1da27ea7314a9d4723f5b468b7cedd87dcad0a491b354",
-                "sha256:ff7db814756d9106c273afc4bd798f48924fa66f9328157a4b722d535baef363"
+                "sha256:321d43772006a25a1d58eea17401ef2a34d388b588c9f7646c34796151ebc8cc",
+                "sha256:d08a57bd63546175f8f19232ba05906514d419da3e0af8ef7437fa1c11442e20"
             ],
             "index": "pypi",
-            "version": "==2.3.0"
+            "version": "==2.3.1"
         },
         "keras-applications": {
             "hashes": [
@@ -394,9 +394,18 @@
         },
         "pycparser": {
             "hashes": [
-                "sha256:a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3"
+                "sha256:a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3",
+                "sha256:f3ff9f61b6e163420b5bfe9f83810133eeac55e2c45a23baf78b3eed44e9095f"
             ],
             "version": "==2.19"
+        },
+        "pydub": {
+            "hashes": [
+                "sha256:c362fa02da1eebd1d08bd47aa9b0102582dff7ca2269dbe9e043d228a0c1ea93",
+                "sha256:d29901a486fb421c5d7b0f3d5d3a60527179204d8ffb20e74e1ae81c17e81b46"
+            ],
+            "index": "pypi",
+            "version": "==0.23.1"
         },
         "pyparsing": {
             "hashes": [
@@ -601,14 +610,6 @@
             ],
             "index": "pypi",
             "version": "==1.4.4"
-        },
-        "colorama": {
-            "hashes": [
-                "sha256:05eed71e2e327246ad6b38c540c4a3117230b19679b875190486ddd2d721422d",
-                "sha256:f8ac84de7840f5b9c4e3347b3c1eaa50f7e49c2b07596221daec5edaabbd7c48"
-            ],
-            "markers": "sys_platform == 'win32'",
-            "version": "==0.4.1"
         },
         "isort": {
             "hashes": [

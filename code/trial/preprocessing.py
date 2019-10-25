@@ -1,12 +1,14 @@
 from pathlib import Path, PurePath
 import numpy as np
 import re
+import os
 from collections import Counter
 from mutagen.easyid3 import EasyID3
+import pydub
 
 
 def makeComposerList():
-    p = Path(r"C:\Users\Takumi\Desktop\statistic\data")
+    p = Path(r"C:\Users\Takumi\Desktop\statistic\data")  # 対応するパスに変更
     mp3_list = sorted(list(p.glob("*.mp3")))
     # filename_list = [PurePath(str(x)).stem for x in wav_list]
 
@@ -25,6 +27,13 @@ def makeComposerList():
     print(num_of_composer)
 
     return composer_list
+
+
+def to_wav(file):
+    filename = file.split(".")[0] + ".wav"
+    pydub.AudioSegment.from_mp3(file).export(filename, format="wav")
+    os.remove(file)
+    print("{}を削除しました".format(file))
 
 
 if __name__ == "__main__":

@@ -17,6 +17,7 @@ tensorflow = "*"
 wave = "*"
 pysoundfile = "*"
 mutagen = "*"
+pydub = "*"
 
 [requires]
 python_version = "3.7"
