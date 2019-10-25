@@ -109,3 +109,4 @@ venv.bak/
 # my setting
 .DS_Store
 .png
+.wav
