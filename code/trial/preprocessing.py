@@ -1,40 +1,42 @@
-from pathlib import Path, PurePath
-import numpy as np
-import re
+import glob
 import os
-from collections import Counter
-from mutagen.easyid3 import EasyID3
+import re
+import shutil
+
+import numpy as np
 import pydub
+from mutagen.easyid3 import EasyID3
 
 
 def makeComposerList():
-    p = Path(r"C:\Users\Takumi\Desktop\statistic\data")  # 対応するパスに変更
-    mp3_list = sorted(list(p.glob("*.mp3")))
-    # filename_list = [PurePath(str(x)).stem for x in wav_list]
+    p = "/Volumes/test/"  # 対応するパスに変更
+    mp3_list = sorted(list(glob.glob(p + "*.mp3")))
+    print(len(mp3_list))
+    print(mp3_list[0])
 
-    # print(filename_list)
-
-    composer_list = []
+    classic_mp3_list = []
     for x in mp3_list:
-        # if re.match(r"[0-9]", x.split("-")[0]):
-        #     composer_list.append(x.split("-")[1])
-        # else:
-        #     composer_list.append(x.split("-")[0])
-        composer_list.append(EasyID3(x)['composer'])  # 'artist'かも
+        try:
+            if EasyID3(x)["genre"][0] == "Classical":
+                classic_mp3_list.append(x)
+                shutil.move(x, "/Volumes/test/classic/" + x.split("/")[3])
+                print(len(classic_mp3_list))
+        except Exception as e:
+            print(x, e.args)
+            continue
 
-    composer_list.sort()
-    num_of_composer = Counter(composer_list)
-    print(num_of_composer)
-
-    return composer_list
+    return classic_mp3_list
 
 
-def to_wav(file):
-    filename = file.split(".")[0] + ".wav"
-    pydub.AudioSegment.from_mp3(file).export(filename, format="wav")
-    os.remove(file)
-    print("{}を削除しました".format(file))
+def to_wav():
+    path = "/Volumes/test/classic/mp3/"
+    mp3_list = sorted(list(glob.glob(path + "*.mp3")))
+    for file in mp3_list:
+        filename = file.replace("mp3", "wav")
+        pydub.AudioSegment.from_mp3(file).export(filename, format="wav")
+        print("{}を生成しました".format(filename))
 
 
 if __name__ == "__main__":
-    print(makeComposerList())
+    # print(makeComposerList())
+    to_wav()
