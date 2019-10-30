@@ -18,10 +18,12 @@ def MelFilterBank(y, sr):
     return librosa.feature.melspectrogram(y=y, sr=sr)
 
 
-def makeLSTMmodel():
+def makeLSTMmodel(hidden):
     model = Sequential()
-    model.add()
-    # return model
+    model.add(LSTM(hidden, input_shape=(),))
+    model.add(Dense())
+    model.compile(loss="categorical_crossentropy", optimezer="")
+    return model
 
 
 if __name__ == "__main__":
