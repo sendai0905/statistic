@@ -6,6 +6,8 @@ verify_ssl = true
 [dev-packages]
 pylint = "*"
 autopep8 = "*"
+jupyter = "*"
+jupytext = "*"
 
 [packages]
 numpy = "*"
@@ -18,6 +20,7 @@ wave = "*"
 pysoundfile = "*"
 mutagen = "*"
 pydub = "*"
+jupyterlab = "*"
 
 [requires]
 python_version = "3.7"
