@@ -1,4 +1,6 @@
 import glob
+import os
+from collections import Counter
 
 import librosa
 import librosa.display
@@ -21,19 +23,20 @@ def MelFilterBank(y, sr):
 
 
 def makeArtistList():
-    path = "C:/Users/Takumi/Desktop/statistic/data/mp3/"
-    mp3_list = sorted(list(glob.glob(path + "*.mp3")))
+    path = "C:/Users/Takumi/Desktop/statistic/data/mp3/composer/"
+    l = ['Beethoven', 'Franz Joseph Haydn', 'J.S. Bach']
     artist_list = []
-    print(EasyID3(mp3_list[0]))
-    # for file in mp3_list:
-    #     try:
-    #         artist_list.append(EasyID3(file)['artist'])
-    #         if not len(artist_list) % 100:
-    #             print(len(artist_list))
-    #     except Exception as e:
-    #         print(file, e.args)
-    #         continue
-    # return artist_list
+    for name in l:
+        print('{} process start.'.format(name))
+        p = path + name + '/cut/'
+        file_count = len(os.listdir(p))
+        l2 = [name] * file_count
+        artist_list.extend(l2)
+
+    counter = Counter(artist_list)
+    print(counter)
+
+    return artist_list
 
 
 def makeLSTMmodel(hidden=128, input_shape=(128,)):
@@ -45,18 +48,18 @@ def makeLSTMmodel(hidden=128, input_shape=(128,)):
 
 
 if __name__ == "__main__":
-    makeArtistList()
+    artist_list = makeArtistList()
     # print(makeArtistList())
-    # path = "C:/Users/Takumi/Desktop/statistic/data/wav/"
-    # wav_list = sorted(list(glob.glob(path + "*.wav")))
-    # for i in range(3):
-    #     wav, sr = readwave(wav_list[i])
-    #     print(wav.shape)
-    #     print(sr)
-    #     t = np.arange(0, len(wav)) / sr
-    #     m = MelFilterBank(wav, sr)
-    #     print(m)
-    #     print(m.shape)
+    path = "C:/Users/Takumi/Desktop/statistic/data/wav/"
+    wav_list = sorted(list(glob.glob(path + "*.wav")))
+    for i in range(3):
+        wav, sr = readwave(wav_list[i])
+        print(wav.shape)
+        print(sr)
+        t = np.arange(0, len(wav)) / sr
+        m = MelFilterBank(wav, sr)
+        print(m)
+        print(m.shape)
 
     # 波形をプロット
     # plt.plot(m)
