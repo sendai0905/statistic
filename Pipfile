@@ -21,6 +21,7 @@ pysoundfile = "*"
 mutagen = "*"
 pydub = "*"
 jupyterlab = "*"
+pexpect = "*"
 
 [requires]
 python_version = "3.7"
